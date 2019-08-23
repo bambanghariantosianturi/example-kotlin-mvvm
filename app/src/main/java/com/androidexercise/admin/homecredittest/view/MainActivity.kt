@@ -30,39 +30,33 @@ class MainActivity : AppCompatActivity(), MainView {
         setContentView(R.layout.activity_main)
 
         mHomeVM = ViewModelProviders.of(this).get(HomeVM::class.java)
-        mHomeVM.getItems()?.observe(this, getList)
+        mHomeVM.getItems()?.observe(this, getProduct)
         mHomeVM.status.observe(this, setInfo)
 
-        initData()
+        showProgress()
     }
 
     private val setInfo = Observer<Boolean?> { t ->
         if (t == true) {
-            Toast.makeText(this, "Succes Load Data", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Success Load Data", Toast.LENGTH_SHORT).show()
         } else {
             Toast.makeText(this, "Cannot Load Data", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun initData() {
-        mHomeVM.setItem()
-        showProgress()
-    }
-
-    private val getList = Observer<List<Product>> { t ->
-        if (t != null) {
-            for (i in 0..t.size) {
-                if (i == 0) {
-                    initAdapterGrid(t[0].items)
-                } else if (i > 0 && i == 1) {
-                    initAdapterArticle(t[1].items)
+    private val getProduct: Observer<List<Product>> =
+        Observer { t ->
+            if (t != null) {
+                for (i in 0..t.size) {
+                    if (i == 0) {
+                        initAdapterGrid(t[i].items)
+                    } else if (i > 0 && i == 1) {
+                        initAdapterArticle(t[i].items)
+                    }
                 }
+                hideProgress()
             }
-
-            hideProgress()
         }
-
-    }
 
     private fun initAdapterArticle(t: List<Product.Items>) {
         rv_article_section.layoutManager = LinearLayoutManager(applicationContext)

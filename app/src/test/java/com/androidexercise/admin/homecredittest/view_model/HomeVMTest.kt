@@ -1,7 +1,7 @@
 package com.androidexercise.admin.homecredittest.view_model
 
 import com.androidexercise.admin.homecredittest.model.Product
-import com.androidexercise.admin.homecredittest.remote.RetrofitConfig
+import com.androidexercise.admin.homecredittest.data.remote.RetrofitConfig
 import org.junit.After
 import org.junit.Before
 import org.junit.Test

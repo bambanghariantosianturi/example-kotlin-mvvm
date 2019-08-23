@@ -1,4 +1,4 @@
-package com.androidexercise.admin.homecredittest.remote
+package com.androidexercise.admin.homecredittest.data.remote
 
 import com.androidexercise.admin.homecredittest.base.BaseAPIResponse
 import com.androidexercise.admin.homecredittest.model.Product

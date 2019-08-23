@@ -1,13 +1,9 @@
-package com.androidexercise.admin.homecredittest.remote
+package com.androidexercise.admin.homecredittest.data.remote
 
 import org.junit.Test
 
-import org.junit.Assert.*
-import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.Mockito.doReturn
-import retrofit2.await
-import retrofit2.awaitResponse
 
 class RetrofitConfigTest {
 
