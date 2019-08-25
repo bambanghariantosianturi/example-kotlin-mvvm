@@ -1,5 +1,8 @@
 package com.androidexercise.admin.homecredittest.util
 
+/**
+ * Not Use
+ */
 class Type {
 
     companion object {
