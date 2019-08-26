@@ -23,13 +23,11 @@ import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity(), MainView {
 
-    private lateinit var mHomeVM: HomeVM
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mHomeVM = ViewModelProviders.of(this).get(HomeVM::class.java)
+        val mHomeVM: HomeVM = ViewModelProviders.of(this).get(HomeVM::class.java)
         mHomeVM.getItems()?.observe(this, getProduct)
         mHomeVM.status.observe(this, setInfo)
 

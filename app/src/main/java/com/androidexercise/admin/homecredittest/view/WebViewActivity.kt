@@ -37,7 +37,12 @@ class WebViewActivity : AppCompatActivity() {
         }
 
         web_view.webChromeClient = object : WebChromeClient() {
-            override fun onJsAlert(view: WebView?, url: String?, message: String?, result: JsResult?): Boolean {
+            override fun onJsAlert(
+                view: WebView?,
+                url: String?,
+                message: String?,
+                result: JsResult?
+            ): Boolean {
                 Toast.makeText(this@WebViewActivity, message, Toast.LENGTH_LONG).show()
                 result?.confirm()
                 return super.onJsAlert(view, url, message, result)

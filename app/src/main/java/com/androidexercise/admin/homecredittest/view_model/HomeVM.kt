@@ -11,7 +11,7 @@ class HomeVM : ViewModel() {
 
     private val repository = ProductRepository()
     private var list: MutableLiveData<List<Product>>? = null
-    private var status = MutableLiveData<Boolean?>()
+    var status = MutableLiveData<Boolean?>()
 
     private fun setItem() {
         repository.getListProduct(object : ProductDataSource.GetProductCallback {
