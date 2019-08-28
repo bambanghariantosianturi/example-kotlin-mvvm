@@ -3,14 +3,14 @@ package com.androidexercise.admin.homecredittest.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.androidexercise.admin.homecredittest.R
 import com.androidexercise.admin.homecredittest.model.Product
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.item_article.view.*
 
-class ArticlesAdapter(private var list: List<Product.Items>) : RecyclerView.Adapter<ArticlesAdapter.ViewHolder>() {
+class ArticlesAdapter(private var list: List<Product.Items>) :
+    RecyclerView.Adapter<ArticlesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_article, parent, false)
@@ -27,8 +27,8 @@ class ArticlesAdapter(private var list: List<Product.Items>) : RecyclerView.Adap
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private val imageArticle: ImageView = view.findViewById(R.id.iv_image_article)
-        private val articlesName: TextView = view.findViewById(R.id.tv_article_title)
+        private val imageArticle = view.iv_image_article
+        private val articlesName = view.tv_article_title
 
         fun onBind(items: Product.Items) {
             articlesName.text = items.article_title
