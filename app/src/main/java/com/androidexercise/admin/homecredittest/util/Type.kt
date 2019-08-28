@@ -1,7 +1,7 @@
 package com.androidexercise.admin.homecredittest.util
 
 /**
- * Not Use
+ * This Class Not Implement
  */
 class Type {
 
