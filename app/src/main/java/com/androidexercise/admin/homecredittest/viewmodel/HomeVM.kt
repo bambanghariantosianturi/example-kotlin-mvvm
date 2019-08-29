@@ -1,4 +1,4 @@
-package com.androidexercise.admin.homecredittest.view_model
+package com.androidexercise.admin.homecredittest.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

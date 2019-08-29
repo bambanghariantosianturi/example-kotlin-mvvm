@@ -1,4 +1,4 @@
-package com.androidexercise.admin.homecredittest.view_model
+package com.androidexercise.admin.homecredittest.viewmodel
 
 import com.androidexercise.admin.homecredittest.model.Product
 import com.androidexercise.admin.homecredittest.data.remote.RetrofitConfig

@@ -16,7 +16,7 @@ import com.androidexercise.admin.homecredittest.util.RecyclerItemClickListener
 import com.androidexercise.admin.homecredittest.util.invisible
 import com.androidexercise.admin.homecredittest.util.visible
 import com.androidexercise.admin.homecredittest.view.WebViewActivity.Companion.WEB_VIEW
-import com.androidexercise.admin.homecredittest.view_model.HomeVM
+import com.androidexercise.admin.homecredittest.viewmodel.HomeVM
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(), MainView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val mHomeVM: HomeVM = ViewModelProviders.of(this).get(HomeVM::class.java)
+        val mHomeVM = ViewModelProviders.of(this).get(HomeVM::class.java)
         mHomeVM.getItems()?.observe(this, getProduct)
         mHomeVM.status.observe(this, setInfo)
 
