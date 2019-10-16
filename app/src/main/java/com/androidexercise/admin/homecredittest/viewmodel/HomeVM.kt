@@ -1,5 +1,7 @@
 package com.androidexercise.admin.homecredittest.viewmodel
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,7 +11,13 @@ import com.androidexercise.admin.homecredittest.model.Product
 
 class HomeVM : ViewModel() {
 
-    private val repository = ProductRepository()
+//    private val repository = ProductRepository()
+private lateinit var repository: ProductRepository
+
+    init {
+        repository = this.repository
+    }
+
     private var list: MutableLiveData<List<Product>>? = null
     var status = MutableLiveData<Boolean?>()
 
